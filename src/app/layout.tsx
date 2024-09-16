@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
 import { Theme } from "@radix-ui/themes";
+import AuthProvider from "./auth/auth.provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +24,7 @@ export default function RootLayout({
           radius="large"
           scaling="95%"
         >
-          {children}
+          <AuthProvider>{children}</AuthProvider>
         </Theme>
       </body>
     </html>
